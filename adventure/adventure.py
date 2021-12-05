@@ -1862,7 +1862,7 @@ class Adventure(
                 if c.heroclass["name"] == "Berserker" and c.heroclass["ability"]:
                     bonus_roll = random.randint(5, 15)
                     bonus_multi = random.choice([0.2, 0.3, 0.4, 0.5])
-                    bonus = max(bonus_roll, int((roll + att_value + rebirths) * bonus_multi))
+                    bonus = max(bonus_roll, int((roll + att_value + (rebirths*100)) * bonus_multi))
                     attack += int((roll - bonus + att_value) / pdef)
                     report += (
                         f"**{escape(user.display_name)}**: "
