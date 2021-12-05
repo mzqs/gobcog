@@ -367,7 +367,7 @@ class ClassAbilities(AdventureMixin):
                         )
                     )
                 else:
-                    cooldown_time = min(1, (3600 - max((c.luck + c.total_int) * 2, 0)))
+                    cooldown_time = min(10, (3600 - max((c.luck + c.total_int) * 2, 0)))
                     if "catch_cooldown" not in c.heroclass:
                         c.heroclass["catch_cooldown"] = cooldown_time + 1
                     if c.heroclass["catch_cooldown"] > time.time():
