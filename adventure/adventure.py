@@ -845,14 +845,14 @@ class Adventure(
         if easy_mode:
             no_monster = False
             if monster_roster[challenge]["boss"]:
-                timer = 60 * 5
+                timer = 60
                 self.bot.dispatch("adventure_boss", ctx)
                 text = box(_("\n [{} Alarm!]").format(new_challenge), lang="css")
             elif monster_roster[challenge]["miniboss"]:
-                timer = 60 * 3
+                timer = 60
                 self.bot.dispatch("adventure_miniboss", ctx)
             else:
-                timer = 60 * 2
+                timer = 60
             if "Transcended" in new_challenge:
                 self.bot.dispatch("adventure_transcended", ctx)
             elif "Ascended" in new_challenge:
@@ -862,7 +862,7 @@ class Adventure(
             elif attribute == " possessed":
                 self.bot.dispatch("adventure_possessed", ctx)
         else:
-            timer = 60 * 3
+            timer = 60
             no_monster = random.randint(0, 100) == 25
         self._sessions[ctx.guild.id] = GameSession(
             ctx=ctx,
@@ -900,7 +900,7 @@ class Adventure(
                 "but **a{attr} {chall}** "
                 "just landed in front of you glaring! \n\n"
                 "What will you do and will other heroes be brave enough to help you?\n"
-                "Heroes have 5 minutes to participate via reaction:"
+                "Heroes have 1 minutes to participate via reaction:"
                 "\n\nReact with: {reactions}"
             ).format(
                 attr=session.attribute,
@@ -910,7 +910,7 @@ class Adventure(
             basilisk_text = _(
                 "but **a{attr} {chall}** stepped out looking around. \n\n"
                 "What will you do and will other heroes help your cause?\n"
-                "Heroes have 3 minutes to participate via reaction:"
+                "Heroes have 1 minutes to participate via reaction:"
                 "\n\nReact with: {reactions}"
             ).format(
                 attr=session.attribute,
@@ -921,7 +921,7 @@ class Adventure(
                 "but **a{attr} {chall}** "
                 "is guarding it with{threat}. \n\n"
                 "What will you do and will other heroes help your cause?\n"
-                "Heroes have 2 minutes to participate via reaction:"
+                "Heroes have 1 minutes to participate via reaction:"
                 "\n\nReact with: {reactions}"
             ).format(
                 attr=session.attribute,
