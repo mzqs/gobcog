@@ -28,7 +28,7 @@ class Negaverse(AdventureMixin):
     """This class will handle negaverse interactions"""
 
     @commands.command(name="negaverse", aliases=["nv"], cooldown_after_parsing=True)
-    @commands.cooldown(rate=0, per=0, type=commands.BucketType.user)
+    @commands.cooldown(rate=1, per=60, type=commands.BucketType.user)
     @commands.guild_only()
     async def _negaverse(
         self, ctx: commands.Context, offering: int = None, roll: Optional[int] = -1, nega: discord.Member = None
