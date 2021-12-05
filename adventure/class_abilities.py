@@ -297,10 +297,10 @@ class ClassAbilities(AdventureMixin):
                             )
                         elif c.heroclass["name"] == "Ranger":
                             c.heroclass["cooldown"] = (
-                                min(10, (7200 - max(c.luck * 2 + c.total_int * 2, 0))) + time.time()
+                                min(10, (7200 - max(c.luck * 2 + c.total_att * 2, 0))) + time.time()
                             )
                             c.heroclass["catch_cooldown"] = (
-                                min(10, (3600 - max(c.luck * 2 + c.total_int * 2, 0))) + time.time()
+                                min(10, (3600 - max(c.luck * 2 + c.total_att * 2, 0))) + time.time()
                             )
                         elif c.heroclass["name"] == "Berserker":
                             c.heroclass["cooldown"] = (
@@ -367,7 +367,7 @@ class ClassAbilities(AdventureMixin):
                         )
                     )
                 else:
-                    cooldown_time = min(10, (3600 - max((c.luck + c.total_int) * 2, 0)))
+                    cooldown_time = min(10, (3600 - max((c.luck + c.total_att) * 2, 0)))
                     if "catch_cooldown" not in c.heroclass:
                         c.heroclass["catch_cooldown"] = cooldown_time + 1
                     if c.heroclass["catch_cooldown"] > time.time():
@@ -390,7 +390,7 @@ class ClassAbilities(AdventureMixin):
                     pet_choices = list(pet_list.keys())
                     pet = random.choice(pet_choices)
                     roll = random.randint(1, 50)
-                    dipl_value = c.total_cha + (c.total_int // 3) + (c.luck // 2)
+                    dipl_value = c.total_cha + (c.total_att // 3) + (c.luck // 2)
                     pet_reqs = pet_list[pet].get("bonuses", {}).get("req", {})
                     pet_msg4 = ""
                     can_catch = True
@@ -513,7 +513,7 @@ class ClassAbilities(AdventureMixin):
                     _("**{author}**, Your backpack is currently full.").format(author=escape(ctx.author.display_name))
                 )
                 return
-            cooldown_time = min(600, (7200 - max((c.luck + c.total_int) * 2, 0)))
+            cooldown_time = min(600, (7200 - max((c.luck + c.total_att) * 2, 0)))
             if "cooldown" not in c.heroclass:
                 c.heroclass["cooldown"] = cooldown_time + 1
             if c.heroclass["cooldown"] <= time.time():
