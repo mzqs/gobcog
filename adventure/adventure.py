@@ -1862,8 +1862,8 @@ class Adventure(
                 if c.heroclass["name"] == "Berserker" and c.heroclass["ability"]:
                     bonus_roll = random.randint(5, 15)
                     bonus_multi = random.choice([0.2, 0.3, 0.4, 0.5])
-                    bonus = max(bonus_roll, int((roll + att_value + (rebirths*100)) * bonus_multi))
-                    attack += int((roll - bonus + att_value) / pdef)
+                    bonus = max(bonus_roll, int((roll + att_value + rebirths) * bonus_multi))
+                    attack += int((roll - bonus + att_value)*100 / pdef)
                     report += (
                         f"**{escape(user.display_name)}**: "
                         f"{self.emojis.dice}({roll}) + "
@@ -1886,7 +1886,7 @@ class Adventure(
                 if c.heroclass["name"] == "Berserker" and c.heroclass["ability"]:
                     base_bonus = (random.randint(1, 10) + 5) * (rebirths // 2)
                 base_str = f"{self.emojis.crit}️ {humanize_number(base_bonus)}"
-                attack += int((roll + base_bonus + crit_bonus + att_value) / pdef)
+                attack += int((roll + base_bonus + crit_bonus + att_value)*100 / pdef)
                 bonus = base_str + crit_str
                 report += (
                     f"**{escape(user.display_name)}**: "
@@ -1895,7 +1895,7 @@ class Adventure(
                     f"{self.emojis.attack}{str(humanize_number(att_value))}\n"
                 )
             else:
-                attack += int((roll + att_value) / pdef) + rebirths
+                attack += int((roll + att_value) / pdef) + rebirths*100
                 report += (
                     f"**{escape(user.display_name)}**: "
                     f"{self.emojis.dice}({roll}) + "
