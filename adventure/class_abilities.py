@@ -513,7 +513,7 @@ class ClassAbilities(AdventureMixin):
                     _("**{author}**, Your backpack is currently full.").format(author=escape(ctx.author.display_name))
                 )
                 return
-            cooldown_time = min(1800, (7200 - max((c.luck + c.total_int) * 2, 0)))
+            cooldown_time = min(600, (7200 - max((c.luck + c.total_int) * 2, 0)))
             if "cooldown" not in c.heroclass:
                 c.heroclass["cooldown"] = cooldown_time + 1
             if c.heroclass["cooldown"] <= time.time():
