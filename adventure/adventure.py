@@ -941,7 +941,7 @@ class Adventure(
                     adventure_msg = await ctx.send(embed=embed)
                 else:
                     adventure_msg = await ctx.send(f"{adventure_msg}\n{dragon_text}")
-                timeout = 60 * 5
+                timeout = 60 
 
             elif session.miniboss:
                 if use_embeds:
@@ -952,7 +952,7 @@ class Adventure(
                     adventure_msg = await ctx.send(embed=embed)
                 else:
                     adventure_msg = await ctx.send(f"{adventure_msg}\n{basilisk_text}")
-                timeout = 60 * 3
+                timeout = 60 
             else:
                 if use_embeds:
                     embed.description = f"{adventure_msg}\n{normal_text}"
