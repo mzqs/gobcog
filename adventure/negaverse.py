@@ -27,7 +27,7 @@ log = logging.getLogger("red.cogs.adventure")
 class Negaverse(AdventureMixin):
     """This class will handle negaverse interactions"""
 
-    @commands.command(name="negaverse", aliases=["nv"], cooldown_after_parsing=False)
+    @commands.command(name="negaverse", aliases=["nv"], cooldown_after_parsing=True)
     @commands.cooldown(rate=1, per=60, type=commands.BucketType.user)
     @commands.guild_only()
     async def _negaverse(
