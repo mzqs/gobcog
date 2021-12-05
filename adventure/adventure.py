@@ -961,7 +961,7 @@ class Adventure(
                     adventure_msg = await ctx.send(embed=embed)
                 else:
                     adventure_msg = await ctx.send(f"{adventure_msg}\n{normal_text}")
-                timeout = 60 * 2
+                timeout = 60
         else:
             embed = discord.Embed(colour=discord.Colour.blurple())
             use_embeds = await self.config.guild(ctx.guild).embed() and ctx.channel.permissions_for(ctx.me).embed_links
