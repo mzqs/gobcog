@@ -270,8 +270,8 @@ class AdventureSetCommands(AdventureMixin):
 
         Default is 120 seconds.
         """
-        if time_in_seconds < 30:
-            return await smart_embed(ctx, _("Cooldown cannot be set to less than 30 seconds."))
+        if time_in_seconds < 1:
+            return await smart_embed(ctx, _("Cooldown cannot be set to less than 1 seconds."))
 
         await self.config.guild(ctx.guild).cooldown_timer_manual.set(time_in_seconds)
         await smart_embed(
