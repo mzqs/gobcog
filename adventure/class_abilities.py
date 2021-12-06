@@ -589,7 +589,7 @@ class ClassAbilities(AdventureMixin):
 
                     await smart_embed(
                         ctx,
-                        _("{bless} **{c}** is starting an inspiring sermon. {bless}").format(
+                        _("{bless} **{c}** is praying and shit. {bless}").format(
                             c=escape(ctx.author.display_name), bless=self.emojis.skills.bless
                         ),
                     )
@@ -818,7 +818,7 @@ class ClassAbilities(AdventureMixin):
                     await self.config.user(ctx.author).set(await c.to_json(ctx, self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is starting to froth at the mouth... {skill}").format(
+                        _("{skill} **{c}** is smoothing out brain... {skill}").format(
                             c=escape(ctx.author.display_name),
                             skill=self.emojis.skills.berserker,
                         ),
@@ -860,7 +860,7 @@ class ClassAbilities(AdventureMixin):
                         ctx,
                         _("**{}**, ability already in use.").format(escape(ctx.author.display_name)),
                     )
-                cooldown_time = max(300, (1200 - max((c.luck + c.total_int) * 2, 0)))
+                cooldown_time = min(10, (1200 - max((c.luck + c.total_int) * 2, 0)))
                 if "cooldown" not in c.heroclass:
                     c.heroclass["cooldown"] = cooldown_time + 1
                 if c.heroclass["cooldown"] <= time.time():
@@ -870,7 +870,7 @@ class ClassAbilities(AdventureMixin):
                     await self.config.user(ctx.author).set(await c.to_json(ctx, self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is focusing all of their energy... {skill}").format(
+                        _("{skill} **{c}** is touching their fat nutsack... {skill}").format(
                             c=escape(ctx.author.display_name),
                             skill=self.emojis.skills.wizzard,
                         ),
