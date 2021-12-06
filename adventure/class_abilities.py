@@ -432,7 +432,7 @@ class ClassAbilities(AdventureMixin):
                     await asyncio.sleep(2)
                     bonus = ""
                     if roll == 1:
-                        bonus = _("But they stepped on a twig and scared it away.")
+                        bonus = _("But they smell like shit so it ran away.")
                     elif roll in [50, 25]:
                         bonus = _("They happen to have its favorite food.")
                     if force_catch or (dipl_value > pet_list[pet]["cha"] and roll > 1 and can_catch):
@@ -640,7 +640,7 @@ class ClassAbilities(AdventureMixin):
                     ctx,
                     _("**{}**, ability already in use.").format(escape(ctx.author.display_name)),
                 )
-            cooldown_time = max(300, (900 - max((c.luck + c.total_cha) * 2, 0)))
+            cooldown_time = min(10, (900 - max((c.luck + c.total_cha) * 2, 0)))
             if "cooldown" not in c.heroclass:
                 c.heroclass["cooldown"] = cooldown_time + 1
             if c.heroclass["cooldown"] + cooldown_time <= time.time():
@@ -870,7 +870,7 @@ class ClassAbilities(AdventureMixin):
                     await self.config.user(ctx.author).set(await c.to_json(ctx, self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is touching their fat nutsack... {skill}").format(
+                        _("{skill} **{c}** is wondering why slosh hasn't given them albedo yet... {skill}").format(
                             c=escape(ctx.author.display_name),
                             skill=self.emojis.skills.wizzard,
                         ),
