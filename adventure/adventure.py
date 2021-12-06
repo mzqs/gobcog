@@ -1863,7 +1863,7 @@ class Adventure(
                     bonus_roll = random.randint(5, 15)
                     bonus_multi = random.choice([0.2, 0.3, 0.4, 0.5])
                     bonus = max(bonus_roll, int((roll + att_value + rebirths) * bonus_multi))
-                    attack += int((roll - bonus + att_value)*1.5 / pdef)
+                    attack += int((roll - bonus + att_value)*3 / pdef)
                     report += (
                         f"**{escape(user.display_name)}**: "
                         f"{self.emojis.dice}({roll}) + "
@@ -1895,7 +1895,7 @@ class Adventure(
                     f"{self.emojis.attack}{str(humanize_number(att_value))}\n"
                 )
             else:
-                attack += int((roll + att_value) / pdef) + rebirths
+                attack += int((roll + att_value)*2 / pdef) + rebirths
                 report += (
                     f"**{escape(user.display_name)}**: "
                     f"{self.emojis.dice}({roll}) + "
