@@ -589,7 +589,7 @@ class ClassAbilities(AdventureMixin):
 
                     await smart_embed(
                         ctx,
-                        _("{bless} **{c}** is praying and shit. {bless}").format(
+                        _("{bless} **{c}** is starting an inspiring sermon. {bless}").format(
                             c=escape(ctx.author.display_name), bless=self.emojis.skills.bless
                         ),
                     )
@@ -818,7 +818,7 @@ class ClassAbilities(AdventureMixin):
                     await self.config.user(ctx.author).set(await c.to_json(ctx, self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is smoothing out brain... {skill}").format(
+                        _("{skill} **{c}** is starting to froth at the mouth... {skill}").format(
                             c=escape(ctx.author.display_name),
                             skill=self.emojis.skills.berserker,
                         ),
@@ -870,7 +870,7 @@ class ClassAbilities(AdventureMixin):
                     await self.config.user(ctx.author).set(await c.to_json(ctx, self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is wondering why slosh hasn't given them albedo yet... {skill}").format(
+                        _("{skill} **{c}** is focusing all their energy... {skill}").format(
                             c=escape(ctx.author.display_name),
                             skill=self.emojis.skills.wizzard,
                         ),
