@@ -1,6 +1,6 @@
 {
-    "Albedo": {"name": "Albedo", "bonus": 3.0, "cha": 150, "bonuses": {"always": true, "crit": 95}},
+    "Albedo": {"name": "Albedo", "bonus": 3.0, "cha": 200, "bonuses": {"always": true, "crit": 95}},
     "Guardians of Nazarick": {"name": "Guardians of Nazarick", "bonus": 5, "cha": 1000000, "bonuses": {"always": true, "crit": 100, "req": {"set": "Ainz Ooal Gown"}}},
-    "Rubedo": {"name": "Rubedo", "bonus": 2.0, "cha": 250, "bonuses": {"always": true, "crit": 95}},
+    "Rubedo": {"name": "Rubedo", "bonus": 2.0, "cha": 150, "bonuses": {"always": true, "crit": 95}},
 
 }
